@@ -1,0 +1,19 @@
+﻿<Window x:Class="Lab14.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab14"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Zarejestruj się:" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Registration.Email, UpdateSourceTrigger=PropertyChanged}" Height="23" TextWrapping="Wrap" Width="120" Margin="403,34,0,363"></TextBox>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Registration.Password, UpdateSourceTrigger=PropertyChanged}" Height="23" TextWrapping="Wrap" Width="120" Margin="403,62,0,335"></TextBox>
+        <CheckBox IsChecked="{Binding Registration.Accept}" Content="Wyrażam zgodę na regulamin" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="326,85,0,0"></CheckBox>
+        <Label Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="326,29,0,0"></Label>
+        <Label Content="Hasło" Margin="326,59,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"></Label>
+        <Button Content="Zarejestruj" HorizontalAlignment="Left" Margin="391,119,0,0" VerticalAlignment="Top" Width="75" Command="{Binding RegisterCommand}" CommandParameter="{Binding Registration}"/>
+        <TextBox HorizontalAlignment="Left" Height="166" Margin="354,143,0,0" TextWrapping="Wrap" Text="{Binding Registration.Errors}" VerticalAlignment="Top" Width="149"/>
+    </Grid>
+</Window>
